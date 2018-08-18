@@ -8,6 +8,7 @@ function InboxController($scope, $filter) {
   vm.todos = todos;
 
   vm.newTodo = '';
+  vm.status = '';
 
   vm.addTodo = addTodo;
   vm.removeTodo = removeTodo;
@@ -15,6 +16,7 @@ function InboxController($scope, $filter) {
   vm.toggleCompleted = toggleCompleted;
   vm.clearCompletedTodos = clearCompletedTodos;
   vm.markAll = markAll;
+  vm.changeStatus = changeStatus;
 
   $scope.$watch('vm.todos', () => {
     vm.remainingCount = $filter('filter')(todos, {
@@ -23,16 +25,6 @@ function InboxController($scope, $filter) {
     vm.completedCount = todos.length - vm.remainingCount;
     vm.allChecked = !vm.remainingCount;
   }, true);
-
-  // Monitor the current route for changes and adjust the filter accordingly.
-  // vm.$on('$routeChangeSuccess', function() {
-  //   var status = vm.status = $routeParams.status || '';
-  //   vm.statusFilter = (status === 'active') ? {
-  //     completed: false
-  //   } : (status === 'completed') ? {
-  //     completed: true
-  //   } : {};
-  // });
 
   function addTodo() {
     var newTodo = {
@@ -74,6 +66,16 @@ function InboxController($scope, $filter) {
         vm.toggleCompleted(todo, completed);
       }
     });
+  }
+
+  function changeStatus(status) {
+    vm.status = status;
+
+    vm.statusFilter = (status === 'active') ? {
+      completed: false
+    } : (status === 'completed') ? {
+      completed: true
+    } : {};
   }
 }
 

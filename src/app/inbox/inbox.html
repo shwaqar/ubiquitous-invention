@@ -24,17 +24,17 @@
 
     <div class="footer" ng-show="vm.todos.length">
       <span class="todo-count">
-        <strong>{{remainingCount}}</strong> item(s) left
+        <strong>{{vm.remainingCount}}</strong> item(s) left
   		</span>
       <ul class="filters">
         <li>
-          <a ng-class="{selected: vm.status == ''}">All</a>
+          <a ng-click="vm.changeStatus('')" ng-class="{selected: vm.status == ''}">All</a>
         </li>
         <li>
-          <a ng-class="{selected: vm.status == 'active'}">Active</a>
+          <a ng-click="vm.changeStatus('active')" ng-class="{selected: vm.status == 'active'}">Active</a>
         </li>
         <li>
-          <a ng-class="{selected: vm.status == 'completed'}">Completed</a>
+          <a ng-click="vm.changeStatus('completed')" ng-class="{selected: vm.status == 'completed'}">Completed</a>
         </li>
       </ul>
       <button class="clear-completed" ng-click="vm.clearCompletedTodos()" ng-show="vm.completedCount">Clear completed</button>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="todo">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <ul class="tab">
+        <li class="tab-item">
+          <a ui-sref="inbox" ui-sref-active="active">Inbox</a>
+        </li>
+        <li class="tab-item">
+          <a ui-sref="projects" ui-sref-active="active">Projects</a>
+        </li>
+      </ul>
+
+      <div ui-view></div>
+
+    </div>
+
+  </body>
+</html>

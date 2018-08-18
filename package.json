@@ -13,7 +13,7 @@
   "dependencies": {
     "angular": "~1.5.11",
     "angular-ui-router": "~0.2.18",
-    "spectre.css": "^0.5.3"
+    "todomvc-app-css": "^2.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

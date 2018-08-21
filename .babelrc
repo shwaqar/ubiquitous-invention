@@ -6,7 +6,8 @@
       },
       "modules": false,
       "exclude": ["transform-es2015-function-name"]
-    }]
+    }],
+    "react"
   ],
   "plugins": [
     "angularjs-annotate",
